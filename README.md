@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+You will be working in teams to make a clone of a common [micro-blogging](https://en.wikipedia.org/wiki/Microblogging) platform. You will be given a back-end API for you to form your front-end application around. The API will include endpoints relating to authentication, users, messages, and likes. Your project must incorporate a majority of the endpoints given in the API.
 
-In the project directory, you can run:
+A portion of your grade will be based on your team-working ability. Please see this document for guidelines:
 
-### `npm start`
+[https://docs.google.com/document/d/1SmfHAwjDHVRmcXyoF1LsWU5OpOC6ok5L-1sKakPQJjM/edit?usp=sharing](https://docs.google.com/document/d/1SmfHAwjDHVRmcXyoF1LsWU5OpOC6ok5L-1sKakPQJjM/edit?usp=sharing)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You will also be following the SCRUM process and assuming roles of either Product Owner, Scrum Master, or QA Tester. Please see this document for more details:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+[https://docs.google.com/document/d/1k9kMzUTTIMKhR_SciLpi87k5CeMMcSjdQHUyo8hX42Y/edit](https://docs.google.com/document/d/1k9kMzUTTIMKhR_SciLpi87k5CeMMcSjdQHUyo8hX42Y/edit)
 
-### `npm test`
+### Learning Objectives
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Practice building larger applications with React + Redux
+- Practice using react-router-dom or connected-react-router
+- Practice building a system architecture for an application
+- Practice reading and understanding a 3rd-party back-end API
+- Practice using a component library
+- Practice following SCRUM processes and understanding/practicing SCRUM roles
+- Practice communicating/working together as a team
 
-### `npm run build`
+## Getting Started...
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We will specify the API you will be using to build your project, but the design, layout, and component architecture will be up to you
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. Familiarize yourself with the API
+2. Mock out possible screens
+3. Break screens out into possible component names
+4. Discuss at what point will you hit the API, store data in your Redux store, use local state, how components will get the props they need to render
+5. Discuss and research what component library you would like to use and which components you will use
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. We recommend trialing some components to get comfortable with how they work and which components you could use for which parts of your application.
 
-### `npm run eject`
+7. Begin creating/using components to establish a general foundation of your app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A starter scaffolding is provided here: [https://gitlab.com/kenzie-academy/se/fe/final-projects/assessment---kwitter-frontend](https://gitlab.com/kenzie-academy/se/fe/final-projects/assessment---kwitter-frontend)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Submission
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For submission, you must include a link to the project repo, the deployed instance of your frontend project, and the deployed kwitter api backend.
