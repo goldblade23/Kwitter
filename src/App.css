@@ -1,3 +1,31 @@
 .App {
   text-align: center;
+  
+}
+
+body{
+background-color: aqua;
+}
+
+.kwitterTittle{
+  border:1px solid black;
+  background-color: white;
+}
+
+.login-Form{
+ border:1px solid;
+}
+
+.login-Section{
+  background-color: white;
+  border:1px solid;
+}
+
+.buttons{
+  display:flex;
+  justify-content: center;
+}
+
+.sign-Up-Form{
+border:1px solid;
 }
