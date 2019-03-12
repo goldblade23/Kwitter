@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import SignUpSubmitButton from "./signUpSubmitButton.js"
 
 class SignUpForm extends Component{
     render() {
@@ -27,6 +27,7 @@ class SignUpForm extends Component{
                     type="password"
                     name="SignUpConfirmPassword"/>
                 </div>
+                <SignUpSubmitButton />
             </div>
     
         )}
