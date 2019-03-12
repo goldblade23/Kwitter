@@ -8,14 +8,14 @@ class LoginForm extends Component{
                 <div className="login-Section">
                     <h2>LOGIN:</h2>  
                     <div className="Login-User-name">
-                    <label for="LoginUserName">USERNAME:</label>
+                    <label htmlFor="LoginUserName">USERNAME:</label>
                         <input 
                             type="text"  
                             name="LoginUserName"/>
                     </div>
 
                     <div className="Login-Password">
-                    <label for="LoginPassword">PASSWORD:</label>
+                    <label htmlFor="LoginPassword">PASSWORD:</label>
                         <input 
                         type="password"
                         name="LoginPassword"/>

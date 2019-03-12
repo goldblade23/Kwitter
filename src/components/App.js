@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../App.css';
 
 import Title from "./title.js"
-import LoginForm from "./login.js"
-import SignUpButton from './signUpButton.js'
-import LoginButton from './loginSubmitButton.js'
-import SignUpForm from "./signUp.js"
+import LoginForm from "./login/login.js"
+import SignUpButton from './login/signUpButton.js'
+import LoginButton from './login/loginSubmitButton.js'
+import SignUpForm from "./login/signUp.js"
 
 import { Route, Switch} from "react-router-dom";
 
