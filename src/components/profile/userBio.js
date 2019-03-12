@@ -13,7 +13,6 @@ class UserBio extends Component{
                         name="profileBio"/>
                 </div>
             </div>
-    
         )}
 
 }
