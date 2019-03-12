@@ -12,21 +12,13 @@ import Title from "./title.js"
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false
-      //isToggleOn: true
-    };
-
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
+  state= {
+    active:false
   }
 
-  handleClick() {
-   this.setState(state => ({
-     active: !state.active
-   }));
+  handleClick = event =>{
+   this.setState({active: !this.state.active})
+   
  }
 
   
