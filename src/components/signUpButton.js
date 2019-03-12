@@ -4,7 +4,7 @@ class SignUpButton extends Component{
     render() {
         return (
             <div className="sign-Up-Button">
-                <button>Sign Up</button>
+                <button onClick={this.props.handleClick}>Sign Up</button>
             </div>
     
         )}

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import SignUpButton from './signUpButton.js'
-import LoginButton from './loginSubmitButton.js'
-import SignUpForm from "./signUp.js"
+
 
 class LoginForm extends Component{
     render() {
@@ -23,11 +21,7 @@ class LoginForm extends Component{
                         name="LoginPassword"/>
                     </div>
                 </div>
-                <div className="buttons">
-                <LoginButton />
-                <SignUpButton />
-                </div>
-                <SignUpForm />
+                
             </div>
     
         )}
