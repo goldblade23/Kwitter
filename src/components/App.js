@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-//import LoginPage from "./loginpage.js"
 import Title from "./title.js"
 import LoginForm from "./login.js"
 import SignUpButton from './signUpButton.js'
