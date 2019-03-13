@@ -7,10 +7,9 @@ class UserBio extends Component{
             
             <div className="profile-user-bio-div">
               <div className="profile-bio">
-                   <label for="profileBio">About Me:</label>
-                    <input 
-                        type="text"  
-                        name="profileBio"/>
+                   <label >Bio:
+                   <textarea rows="5" cols="50" 
+                        name="profileBio"/></label>
                 </div>
             </div>
         )}

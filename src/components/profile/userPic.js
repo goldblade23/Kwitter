@@ -6,30 +6,35 @@ class UserPic extends Component{
         return (
         <div className="profileUserPicDiv">
               <div className="profile-user-pic">
-                   <label for="profileUserPic"></label>
+                   {/* <label htmlFor="profileUserPic"></label>
                     <input 
                         type="text"  
                         name="profileUserName"/>
                 </div>
                 <div className="email-address">
-                <label for="emailAddress">EMAIL ADDRESS:</label>
+                <label htmlFor="emailAddress">EMAIL ADDRESS:</label>
                     <input 
                     type="email"
                     name="emailAddress"/>
                 </div>
                 <div className="current-password">
-                <label for="currentPassword">PASSWORD:</label>
+                <label htmlFor="currentPassword">PASSWORD:</label>
                     <input 
                     type="password"
                     name="currentPassword"/>
                 </div>
 
                 <div className="change-current-Password">
-                <label for="changeCurrentPassword">CHANGE CURRENT PASSWORD:</label>
+                <label htmlFor="changeCurrentPassword">CHANGE CURRENT PASSWORD:</label>
                     <input 
                     type="password"
-                    name="changeCurrentPassword"/>
-                </div>
+                    name="changeCurrentPassword"/>*/}
+                </div> 
+                <form>
+  <input type="file" name="pic" accept="image/*" />
+  
+  {/* <input type="submit" /> */}
+</form>
             </div>
     
         )}

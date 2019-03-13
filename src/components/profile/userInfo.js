@@ -6,32 +6,37 @@ class UserInfo extends Component{
         return (
             
             <div className="profile-user-info-div">
-              <h2>Profile:</h2> 
               <div className="profile-user-info">
-                   <label for="profileUserName">USERNAME:</label>
+                   <label htmlFor="profileUserName">USERNAME:</label>
                     <input 
                         type="text"  
                         name="profileUserName"/>
                 </div>
+                <div className="profile-User-Name">
+                   <label htmlFor="profileName">NAME:</label>
+                    <input 
+                        type="text"  
+                        name="UserName"/>
+                </div>
                 <div className="email-address">
-                <label for="emailAddress">EMAIL ADDRESS:</label>
+                <label htmlFor="emailAddress">EMAIL ADDRESS:</label>
                     <input 
                     type="email"
                     name="emailAddress"/>
                 </div>
                 <div className="current-password">
-                <label for="currentPassword">PASSWORD:</label>
+                <label htmlFor="currentPassword">LOCATION:</label>
                     <input 
                     type="password"
                     name="currentPassword"/>
                 </div>
-
+{/* 
                 <div className="change-current-password">
-                <label for="changeCurrentPassword">CHANGE CURRENT PASSWORD:</label>
+                <label htmlFor="changeCurrentPassword">CHANGE CURRENT PASSWORD:</label>
                     <input 
                     type="password"
                     name="changeCurrentPassword"/>
-                </div>
+                </div> */}
             </div>
     
         )}
