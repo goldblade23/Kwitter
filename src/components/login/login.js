@@ -4,21 +4,21 @@ import React, { Component } from 'react';
 class LoginForm extends Component{
     render() {
         return (
-            <div className="login-Form">
-                <div className="login-Section">
+            <div className="login-form">
+                <div className="login-section">
                     <h2>LOGIN:</h2>  
-                    <div className="Login-User-name">
-                    <label htmlFor="LoginUserName">USERNAME:</label>
+                    <div className="login-user-name">
+                    <label htmlFor="loginUserName">USERNAME:</label>
                         <input 
                             type="text"  
-                            name="LoginUserName"/>
+                            name="loginUserName"/>
                     </div>
 
-                    <div className="Login-Password">
-                    <label htmlFor="LoginPassword">PASSWORD:</label>
+                    <div className="login-password">
+                    <label htmlFor="loginPassword">PASSWORD:</label>
                         <input 
                         type="password"
-                        name="LoginPassword"/>
+                        name="loginPassword"/>
                     </div>
                 </div>
                 
