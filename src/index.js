@@ -4,15 +4,19 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-// import { Provider } from 'react-redux'
-// import { createStore } from 'redux'
-// import reducer from './reducer'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import reducer from './reducers/reducers.js'
 import {BrowserRouter,Route} from "react-router-dom"
 
+const store = createStore(reducer)
+
 ReactDOM.render(
+    <Provider store={store}>
 <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Route component={App}></Route>
-    </BrowserRouter>,
+    </BrowserRouter>
+    </Provider>,
 document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
