@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import '../App.css';
-//---all
+
 import Title from "./title.js"
 
 import LoginPage from "./login/loginPage.js"
 
 import { Route, Switch} from "react-router-dom";
-
-
 
 class App extends Component {
 //   state= {

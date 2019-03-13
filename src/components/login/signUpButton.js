@@ -5,8 +5,10 @@ import { connect } from "react-redux";
 class SignUpButton extends Component{
     render() {
         return (
+
             <div className="sign-Up-Button">
                 <button onClick={()=>this.props.signUpOpenForm()}>Sign Up</button>
+
             </div>
     
         )}
