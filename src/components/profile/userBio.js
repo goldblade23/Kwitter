@@ -5,7 +5,7 @@ class UserBio extends Component{
     render() {
         return (
             
-            <div className="profileUserBioDiv">
+            <div className="profile-user-bio-div">
               <div className="profile-bio">
                    <label for="profileBio">About Me:</label>
                     <input 
