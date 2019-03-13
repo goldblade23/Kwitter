@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import SignUpSubmitButton from "./signUpSubmitButton.js"
 
 class SignUpForm extends Component{
     render() {
@@ -8,25 +8,26 @@ class SignUpForm extends Component{
             <div className="sign-Up-Form">
               <h2>Sign Up:</h2> 
               <div className="signup-User-name">
-                   <label for="signUpUserName">USERNAME:</label>
+                   <label htmlFor="signUpUserName">USERNAME:</label>
                     <input 
                         type="text"  
                         name="signUpUserName"/>
                 </div>
 
                 <div className="Sign-Up-Password">
-                <label for="SignUpPassword">PASSWORD:</label>
+                <label htmlFor="SignUpPassword">PASSWORD:</label>
                     <input 
                     type="password"
                     name="SignUpPassword"/>
                 </div>
 
                 <div className="Sign-Up-Confirm-Password">
-                <label for="SignUpConfirmPassword">CONFIRM PASSWORD:</label>
+                <label htmlFor="SignUpConfirmPassword">CONFIRM PASSWORD:</label>
                     <input 
                     type="password"
                     name="SignUpConfirmPassword"/>
                 </div>
+                <SignUpSubmitButton />
             </div>
     
         )}
