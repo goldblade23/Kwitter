@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-import LoginForm from "./login.js"
-import SignUpButton from './signUpButton.js'
-import LoginButton from './loginSubmitButton.js'
-import SignUpForm from "./signUp.js"
 import Title from "./title.js"
 
+import LoginPage from "./login/loginPage.js"
 
-
-
+import { Route, Switch} from "react-router-dom";
 
 class App extends Component {
-  state= {
-    active:false
-  }
+//   state= {
+//     active:false
+//   }
 
-  handleClick = event =>{
-   this.setState({active: !this.state.active})
+//   handleClick = event =>{
+//    this.setState({active: !this.state.active})
    
- }
+//  }
 
   
   render() {
@@ -27,15 +23,24 @@ class App extends Component {
       <div className="App">
 
       <Title />
-       <LoginForm />
-        <div className="buttons">
-          <LoginButton />
-          <SignUpButton 
-            handleClick={this.handleClick}/>
-        </div>
-        {this.state.active ?
-          <SignUpForm />
-          :null}
+      <Switch>
+       
+    <Route exact path="/" render={() =>
+      <p>hello</p>
+      } />
+
+  <Route exact path="/login" render={() =>
+     <LoginPage />
+      } />    
+
+<Route exact path="/profile" render={() =>
+ <p>hello</p>
+} /> 
+
+<Route exact path="/feed" render={() =>
+          <p>feed</p>
+        } /> 
+          </Switch>
       </div>
     );
   }

@@ -5,7 +5,7 @@ class UserInfo extends Component{
     render() {
         return (
             
-            <div className="profileUserInfoDiv">
+            <div className="profile-user-info-div">
               <h2>Profile:</h2> 
               <div className="profile-user-info">
                    <label for="profileUserName">USERNAME:</label>
@@ -26,7 +26,7 @@ class UserInfo extends Component{
                     name="currentPassword"/>
                 </div>
 
-                <div className="change-current-Password">
+                <div className="change-current-password">
                 <label for="changeCurrentPassword">CHANGE CURRENT PASSWORD:</label>
                     <input 
                     type="password"

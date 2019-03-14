@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
-
+import SignUpSubmitButton from "./signUpSubmitButton.js"
 
 class SignUpForm extends Component{
     render() {
         return (
             
-            <div className="sign-Up-Form">
+            <div className="sign-up-form">
               <h2>Sign Up:</h2> 
-              <div className="signup-User-name">
-                   <label for="signUpUserName">USERNAME:</label>
+              <div className="signup-user-name">
+                   <label htmlFor="signUpUserName">USERNAME:</label>
                     <input 
                         type="text"  
                         name="signUpUserName"/>
                 </div>
 
-                <div className="Sign-Up-Password">
-                <label for="SignUpPassword">PASSWORD:</label>
+                <div className="sign-up-password">
+                <label htmlFor="signUpPassword">PASSWORD:</label>
                     <input 
                     type="password"
-                    name="SignUpPassword"/>
+                    name="signUpPassword"/>
                 </div>
 
-                <div className="Sign-Up-Confirm-Password">
-                <label for="SignUpConfirmPassword">CONFIRM PASSWORD:</label>
+                <div className="sign-up-confirm-cassword">
+                <label htmlFor="signUpConfirmPassword">CONFIRM PASSWORD:</label>
                     <input 
                     type="password"
-                    name="SignUpConfirmPassword"/>
+                    name="signUpConfirmPassword"/>
                 </div>
+                <SignUpSubmitButton />
             </div>
     
         )}

@@ -11,6 +11,7 @@ class DeleteAccount extends Component{
                 </div>
          
     
+
         )}
 
 }
