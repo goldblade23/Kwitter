@@ -34,7 +34,7 @@ class App extends Component {
       } />    
 
 <Route exact path="/profile" render={() =>
- <p>hello</p>
+ <ProfilePage />
 } /> 
 
 <Route exact path="/feed" render={() =>
