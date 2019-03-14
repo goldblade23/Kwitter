@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import SignUpSubmitButton from "./signUpSubmitButton.js"
 
 class SignUpForm extends Component{
     render() {
         return (
             
             <div className="sign-up-form">
+            <form>
               <h2>Sign Up:</h2> 
               <div className="signup-user-name">
                    <label htmlFor="signUpUserName">USERNAME:</label>
@@ -27,7 +27,10 @@ class SignUpForm extends Component{
                     type="password"
                     name="signUpConfirmPassword"/>
                 </div>
-                <SignUpSubmitButton />
+                <div className="sign-up-submit-button">
+                <button>Submit</button>
+            </div>
+            </form>
             </div>
     
         )}

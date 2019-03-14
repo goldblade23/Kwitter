@@ -4,6 +4,7 @@ import '../App.css';
 import Title from "./title.js"
 
 import LoginPage from "./login/loginPage.js"
+import ProfilePage from "./profile/profilePage.js"
 
 import { Route, Switch} from "react-router-dom";
 

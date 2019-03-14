@@ -16,9 +16,13 @@ background-color: aqua;
  border:1px solid;
 }
 
-.login-Section{
+.login-section{
   background-color: white;
   border:1px solid;
+  margin:auto;
+Width:400px;
+height:150px;
+padding: 10px;
 }
 
 .buttons{
@@ -26,7 +30,34 @@ background-color: aqua;
   justify-content: center;
 }
 
-.sign-Up-Form{
+.sign-up-form{
 border:1px solid;
 background-color: white;
+margin:auto;
+Width:400px;
+height:150px;
+padding: 10px;
+}
+
+.profile-user-pic{
+  margin:auto;
+  Width:150px;
+  height:150px;
+  border:1px solid;
+  padding: 10px;
+  background-color: lightyellow;
+}
+
+
+label textarea{
+  vertical-align: middle;
+}
+
+.profile-page{
+  border:1px solid;
+background-color: white;
+margin:auto;
+Width:400px;
+
+padding: 10px;
 }
