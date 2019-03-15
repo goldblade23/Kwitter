@@ -28,7 +28,7 @@ const login = loginData => dispatch => {
     })
     .catch(err => {
       return Promise.reject(
-        dispatch({ type: LOGIN_FAIL, payload: err.message })
+        dispatch({ type: LOGIN_FAIL, payload: alert("Incorrect login or password.") })
       );
     });
 };
