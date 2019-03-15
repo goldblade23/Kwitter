@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       return { ...state, registerLoading: true, registerError: null };
 
     case REGISTER_SUCCESS:
-      return { ...state, register: action.payload, registerLoading: true };
+      return { ...state, register: action.payload, registerLoading: false };
 
     case REGISTER_FAIL:
       return {
