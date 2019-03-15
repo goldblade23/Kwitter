@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../../actions/auth";
+import { NavLink} from "react-router-dom";
 
 class SignUpForm extends Component {
   state = { username: "", password: "" , displayName: ""};
@@ -29,7 +30,17 @@ class SignUpForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-
+   
+   <div className="displayName">
+            <label htmlFor="displayName">DISPLAYNAME:</label>
+            <input
+              type="text"
+              name="displayName"
+              required
+              onChange={this.handleChange}
+            />
+          </div>
+          
           <div className="sign-up-password">
             <label htmlFor="password">PASSWORD:</label>
             <input
@@ -40,21 +51,15 @@ class SignUpForm extends Component {
             />
           </div>
 
-          <div className="displayName">
-            <label htmlFor="displayName">DISPLAYNAME:</label>
-            <input
-              type="text"
-              name="displayName"
-              required
-              onChange={this.handleChange}
-            />
-          </div>
+       
           <div className="sign-up-submit-button">
             <button type="submit" disabled={isLoading}>
               Submit
             </button>
           </div>
+          <NavLink exact to ="/" >login</NavLink>
         </form>
+        
       </div>
     );
   }
