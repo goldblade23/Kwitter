@@ -13,7 +13,8 @@ const initialState = {
   loginError: null,
   registerLoading: false,
   register: null,
-  registerError: null
+  registerError: null,
+  displayName: ""
 };
 
 export default (state = initialState, action) => {
