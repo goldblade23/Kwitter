@@ -75,6 +75,7 @@ const register = registerData => dispatch => {
   dispatch({
     type: REGISTER
   });
+  console.log(registerData)
 
   return fetch(url + "/register", {
     method: "POST",
@@ -102,6 +103,6 @@ const register = registerData => dispatch => {
 
 export const registerThenGoToUserProfile = registerData => dispatch => {
   return dispatch(register(registerData)).then(() =>
-    dispatch(push("/profile"))
+    dispatch(loginThenGoToUserProfile(registerData))
   );
 };
