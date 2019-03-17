@@ -26,6 +26,7 @@ class App extends Component {
           <Route exact path="/register" render={() => <SignUpForm />} />
           <Route exact path="/profile" render={() => <ProfilePage />} />
           <Route exact path="/feed" render={() => <FeedPage />} />
+
         </Switch>
       </div>
     );
