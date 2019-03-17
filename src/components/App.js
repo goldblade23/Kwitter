@@ -24,7 +24,7 @@ class App extends Component {
           <Route exact path="/" render={() => <LoginPage />} />
           <Route exact path="/register" render={() => <SignUpForm />} />
           <Route exact path="/profile" render={() => <ProfilePage />} />
-          <Route exact path="/feed" render={() => <p>feed</p>} />
+          <Route exact path="/feed" render={() => <p>Under construction</p>} />
         </Switch>
       </div>
     );
