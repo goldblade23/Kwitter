@@ -9,29 +9,23 @@ class ProfilePage extends Component {
         <UserPic />
         <form>
           <div className="profile-user-info-div">
-            <div className="profile-user-info">
-              <label htmlFor="profileUserName">USERNAME:</label>
-              <input type="text" name="profileUserName" />
+            <div className="profile-username">
+              <label htmlFor="username">USERNAME:</label>
+              <input type="text" name="username" value="(login.username)"/>
             </div>
-            <div className="profile-User-Name">
-              <label htmlFor="profileName">NAME:</label>
-              <input type="text" name="UserName" />
+            <div className="profile-display-Name">
+              <label htmlFor="displayName">DISPLAYNAME:</label>
+              <input type="text" name="displayName" value="(login.displayname)"/>
             </div>
-            <div className="email-address">
-              <label htmlFor="emailAddress">EMAIL ADDRESS:</label>
-              <input type="email" name="emailAddress" />
-            </div>
-            <div className="current-password">
-              <label htmlFor="currentPassword">LOCATION:</label>
-              <input type="password" name="currentPassword" />
-            </div>
+            
+            
           </div>
 
           <div className="profile-user-bio-div">
             <div className="profile-bio">
               <label>
-                Bio:
-                <textarea rows="4" cols="40" name="profileBio" />
+                About me:
+                <textarea rows="4" cols="40" name="about" />
               </label>
             </div>
           </div>
