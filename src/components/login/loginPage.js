@@ -56,7 +56,7 @@ class LoginPage extends Component {
                   />
                 </div>
                 <Button.Group>
-                  <br/>
+                  <br />
                   <Button
                     className="login-button"
                     type="submit"
@@ -68,7 +68,6 @@ class LoginPage extends Component {
                     Login
                   </Button>
                   <Button.Or />
-                  {/* <NavLink exact to ="/register" activeClassName="selected"><button>Register Now!</button></NavLink> */}
                   <Link exact to="/register">
                     <Button className="signup-button" size="large" color="blue">
                       Register Now!
