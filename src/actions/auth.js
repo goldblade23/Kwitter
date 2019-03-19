@@ -110,3 +110,9 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 
+// ////Upload user photo///
+// export const uploadUserPic = picture => dispatch => {
+//   return dispatch(picture).then(()=>
+//   dispatch()
+//   )
+// }
