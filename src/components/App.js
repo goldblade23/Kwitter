@@ -36,6 +36,4 @@ export default connectRouter(
     login:auth.login
   }),null
   
-  
-  
 )(App);
