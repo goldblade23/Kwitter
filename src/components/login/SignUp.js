@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../../actions/auth";
 import { Link} from "react-router-dom";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Input,
+  Segment
+} from "semantic-ui-react";
 
 class SignUpForm extends Component {
   state = { username: "", password: "", displayName:"" };

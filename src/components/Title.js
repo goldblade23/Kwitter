@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class  Tittle extends Component{
+class  Title extends Component{
     render() {
         return (
-            <div className="kwitterTittle">
+            <div className="kwitterTitle">
                 <h1>Kwitter</h1>
             </div>
     
@@ -11,4 +11,4 @@ class  Tittle extends Component{
 
 }
 
-export default Tittle
+export default Title
