@@ -21,7 +21,7 @@ class ProfilePage extends Component {
     this.setState({ value: e.target.value });
   };
   render() {
-
+    const {isLoading} = this.props;
     return (
       <Router>
         <div className="profile-page">
@@ -35,34 +35,41 @@ class ProfilePage extends Component {
             <div className="profile-user-info-div">
               <div className="profile-username">
                 <label htmlFor="username">USERNAME:</label>
-                <input 
-                type="text" name="username" 
-                placeholder= {this.state.username} />
+                <input
+                  type="text" name="username"
+                  placeholder />
+              </div>
+              <div className="current-password-div">
+                <label for="currentPasswordSetting">PASSWORD:</label>
+                <input
+                  type="text"
+                  placeholder="......"
+                  name="username" />
+                <NavLink exact to='/' activeClassName='selected'>Change Current Password</NavLink>
+              </div>
             </div>
-
-            <div className="current-password-div">
-              <label for="currentPasswordSetting">PASSWORD:</label>
-              <input
-              type="text" 
-              placeholder = "......"
-              name="username"  />
-              <NavLink exact to='/' activeClassName='selected'>Change Current Password</NavLink>
-            </div>
-           </div>
-          <div className="profile-user-bio-div">
-            <div className="profile-bio">
-              <label>
-                About me:
+            <div className="profile-user-bio-div">
+              <div className="profile-bio">
+                <label>
+                  About me:
                  <textarea rows="4" cols="40" name="about" />
-              </label>
+                </label>
+              </div>
             </div>
-          </div>
+            <div className="delete-account-button">
+              <button to="/warning">Delete Account</button> 
+            </div>
+            <div className="profile-return-to-feed">
+              <button type="submit" disabled={isLoading} to="/feed">
+                Back to My Feed
+        </button>
 
-          <div className="profile-Submit-Button">
-            <button>Submit</button>
-          </div>
-         </form>
-         </div>
+            </div>
+            <div className="profile-Submit-Button">
+              <button>Submit Changes</button>
+            </div>
+          </form>
+        </div>
       </Router>
     );
   }
@@ -70,6 +77,7 @@ class ProfilePage extends Component {
 
 class UserPic extends Component {
   state = {
+    active: false,
     selectedFile: null
   }
   fileSelectedHandler = e => {
@@ -88,54 +96,19 @@ class UserPic extends Component {
       <div className="profileUserPicDiv">
         <div className="profile-user-pic">
           <label for="profileUserPic"></label>
+          <input type="file" onChange={this.fileChangeHandler} />
           <button onClick={this.fileUploadHandler}>Upload a Photo</button>
-          <input type="file" onChange={console.log("yes")} />
+          
         </div>
       </div>
     )
   }
 }
 
-// class SubmitChangesButton extends Component {
-//   render() {
-//     return (
 
-//       <div className="profile-submit-changes">
-//         <button onClick={() => this.props.ProfilePage()}>Submit Changes</button>
-
-//       </div>
-
-//     )
-//   }
-// }
-
-// class ReturnToFeedButton extends Component {
-//   render() {
-//     return (
-
-//       <div className="profile-return-to-feed">
-//         <button onClick={() => this.props.ProfilePage()}>Go Back to My Feed</button>
-//       </div>
-
-//     )
-//   }
-
-// }
-// class DeleteAccount extends Component {
-//  render() {
-//     return (
-//      <div className="profile-delete-account">
-// //         <label for="profileDeleteAccount"></label>
-// //         <button onClick={this.deleteAccountHandler}>Delete Your Account</button>
-// //         <input type="file" onChange={} />
-// //       </div>
-// //     )
-// //   }
-// // }
-
- const mapStateToProps = state => {
-   return {
-     active: state.active
-   }
- }
+const mapStateToProps = state => {
+  return {
+    active: state.active
+  }
+}
 export default connect(mapStateToProps, null)(ProfilePage)
