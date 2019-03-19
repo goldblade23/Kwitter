@@ -5,6 +5,7 @@ import LoginPage from "./login/loginPage.js";
 import ProfilePage from "./profile/profilePage.js";
 import { Route, Switch } from "react-router-dom";
 import SignUpForm from "./login/signUp.js";
+import FeedPage from "./feed/feedPage.js"
 
 class App extends Component {
   //   state= {
@@ -24,7 +25,8 @@ class App extends Component {
           <Route exact path="/" render={() => <LoginPage />} />
           <Route exact path="/register" render={() => <SignUpForm />} />
           <Route exact path="/profile" render={() => <ProfilePage />} />
-          <Route exact path="/feed" render={() => <p>Under construction</p>} />
+          <Route exact path="/feed" render={() => <FeedPage />} />
+
         </Switch>
       </div>
     );
