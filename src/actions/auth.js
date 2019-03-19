@@ -10,6 +10,7 @@ export const REGISTER = "REGISTER";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
+// export const USER_PIC = "USER_PIC";
 const url = domain + "/auth";
 
 // action creators
@@ -83,3 +84,9 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
 };
 
 
+// ////Upload user photo///
+// export const uploadUserPic = picture => dispatch => {
+//   return dispatch(picture).then(()=>
+//   dispatch()
+//   )
+// }

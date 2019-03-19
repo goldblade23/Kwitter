@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import UserPic from "./UserPic.js";
-import DeleteAccount from "./DeleteAccount";
-import { NavLink} from "react-router-dom";
-import { user } from "../../actions"
-import { connect } from "react-redux";
-
 // import DeleteAccount from "./deleteAccount";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+// import { user } from "../../actions";
+// import { uploadUserPic } from "../../actions/auth"
   class ProfilePage extends Component {
 
     state = {
@@ -32,22 +28,21 @@ import { connect } from "react-redux";
   render() {
     // const {isLoading} = this.props;
     return (
-
           <Router>
             <div className="profile-page">
               <UserPic />
               <form>
                 <div className="profile-display-Name">
                   <label htmlFor="displayName">DISPLAYNAME:</label>
-                  <input type="text" name="displayName" placeholder="(login.displayname)" />
+                  <input type="text" name="displayName" placeholder={this.props.displayName} />
                 </div>
     
                 <div className="profile-user-info-div">
                   <div className="profile-username">
                     <label htmlFor="username">USERNAME:</label>
                     <input
-                      type="text" name="username"
-                      placeholder />
+                      type="text" name="userName"
+                      placeholder={this.props.userName} />
                   </div>
                   <div className="current-password-div">
                     <label for="currentPasswordSetting">PASSWORD:</label>
@@ -84,41 +79,49 @@ import { connect } from "react-redux";
         );
       }
     }
+  
+    // class UserPic extends Component {
+      // state = {
+      //     active: false,
+      //     selectedFile: null
+      // }
+      //     fileChangeHandler = event => {
+      //         console.log(event.target.files[0])
+      //         this.setState({
+      //             fileBeingChanged:event.target.files[0]
+      //         })
+      //     }
+      
+      //     fileUploadHandler = () => {
+      //         picture.post(' ')
+      //     }
+      
+      //     handleToggle = () => {
+      //         this.setState(prevState => ({
+      //             active: !prevState.active;
+      //         }))
+      //     }
+      //     render() {
+      //         return (
+      //             <div className="profile-user-pic-div">
+      //               <input type="file" name = "picture" accept = "image/*" onChange={this.fileChangeHandler} />
+      //               <button onClick={this.fileUploadHandler}>Upload a Photo</button>
+      //             </div>
+      
+      //         )}
+      // }
+      
+      // const mapDispatchToProps = dispatch => ({
+      //     uploadUserPic: picture => dispatch()
+      // }
+      // export default connect(mapDispatchToProps, null)(UserPic)
+
+
+
+//  const mapStateToProps = state => {
+//    return {
     
-    class UserPic extends Component {
-      state = {
-        active: false,
-        selectedFile: null
-      }
-      fileSelectedHandler = e => {
-        console.log("yes")
-        this.setState({
-          selectedFile: e.target.files[0]
-        })
-      }
-    
-      //fileUPloadHandler = () => {
-      //  image.post(' ')
-      //}
-    
-      render() {
-        return (
-          <div className="profileUserPicDiv">
-            <div className="profile-user-pic">
-              <label for="profileUserPic"></label>
-              <input type="file" onChange={this.fileChangeHandler} />
-              <button onClick={this.fileUploadHandler}>Upload a Photo</button>
-              
-            </div>
-          </div>
-        )
-      }
-    }
-    
-    
-    const mapStateToProps = state => {
-      return {
-        active: state.active
-      }
-    }
-    export default connect(mapStateToProps, null)(ProfilePage)
+//    }
+//  }
+//  export default connect(mapStateToProps, null)(ProfilePage)
+export default connect(ProfilePage)
