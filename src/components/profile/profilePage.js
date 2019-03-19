@@ -77,6 +77,7 @@ class ProfilePage extends Component {
 
 class UserPic extends Component {
   state = {
+    active: false,
     selectedFile: null
   }
   fileSelectedHandler = e => {
@@ -95,8 +96,9 @@ class UserPic extends Component {
       <div className="profileUserPicDiv">
         <div className="profile-user-pic">
           <label for="profileUserPic"></label>
+          <input type="file" onChange={this.fileChangeHandler} />
           <button onClick={this.fileUploadHandler}>Upload a Photo</button>
-          <input type="file" onChange={console.log("yes")} />
+          
         </div>
       </div>
     )
