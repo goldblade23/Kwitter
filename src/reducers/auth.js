@@ -18,6 +18,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+  //console.log(action.type)
   switch (action.type) {
     case LOGIN:
       return { ...state, loginLoading: true, loginError: null };
@@ -35,11 +36,7 @@ export default (state = initialState, action) => {
       return { ...state, register: action.payload, registerLoading: false };
 
     case REGISTER_FAIL:
-      return {
-        ...state,
-        registerError: action.payload,
-        registerLoading: false
-      };
+      return {...state,registerError: action.payload, registerLoading: false};
 
     default:
       return state;
