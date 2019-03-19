@@ -30,7 +30,17 @@ class SignUpForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-
+   
+   <div className="displayName">
+            <label htmlFor="displayName">DISPLAYNAME:</label>
+            <input
+              type="text"
+              name="displayName"
+              required
+              onChange={this.handleChange}
+            />
+          </div>
+          
           <div className="sign-up-password">
             <label htmlFor="password">PASSWORD:</label>
             <input

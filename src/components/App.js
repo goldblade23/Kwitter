@@ -32,6 +32,7 @@ class App extends Component {
           <Route exact path="/profile" render={() => <ProfilePage />} />
           {/* <Route exact path="/" render={() => login!==null ?  <LoginPage />: <FeedPage />} /> */}
           <Route exact path="/feed" render={() => <FeedPage />} />
+
         </Switch>
       </div>
     );
