@@ -4,8 +4,8 @@ import Title from "./Title.js";
 import LoginPage from "./login/LoginPage.js";
 import ProfilePage from "./profile/ProfilePage.js";
 import { Route, Switch } from "react-router-dom";
-import SignUpForm from "./login/signUp.js";
-import FeedPage from "./feed/feedPage.js"
+import SignUpForm from "./login/SignUp.js";
+import FeedPage from "./feed/FeedPage.js"
 //import { connectRouter } from "connected-react-router";
 //import { connect } from "react-redux";
 import { connectRouter } from "connected-react-router";
