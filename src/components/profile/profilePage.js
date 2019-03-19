@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import UserPic from "./userPic.js";
-import DeleteAccount from "./deleteAccount";
+import UserPic from "./UserPic.js";
+import DeleteAccount from "./DeleteAccount";
 import { NavLink} from "react-router-dom";
 import { user } from "../../actions"
 import { connect } from "react-redux";
