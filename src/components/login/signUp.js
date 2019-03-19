@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../../actions/auth";
+import { Link} from "react-router-dom";
 
 class SignUpForm extends Component {
-  state = { username: "", password: "" };
+  state = { username: "", password: "", displayName:"" };
 
   handleRegister = e => {
     e.preventDefault();
@@ -40,16 +41,19 @@ class SignUpForm extends Component {
             />
           </div>
 
-          <div className="sign-up-confirm-password">
-            <label htmlFor="ConfirmPassword">CONFIRM PASSWORD:</label>
-            <input type="password" name="ConfirmPassword" required />
+          <div className="sign-up-displayName">
+            <label htmlFor="displayName">DISPLAYNAME:</label>
+            <input type="text" name="displayName" required 
+              onChange={this.handleChange}/>
           </div>
           <div className="sign-up-submit-button">
             <button type="submit" disabled={isLoading}>
               Submit
             </button>
           </div>
+          <Link exact to ="/" ><button>Login</button></Link>
         </form>
+        
       </div>
     );
   }

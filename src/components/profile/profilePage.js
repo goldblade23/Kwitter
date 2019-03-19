@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import UserPic from "./userPic.js";
 import DeleteAccount from "./deleteAccount";
-
+import { NavLink} from "react-router-dom";
+import { user } from "../../actions"
+import { connect } from "react-redux";
 class ProfilePage extends Component {
+  state = { displayName: "", about: "" }
+
   render() {
     return (
       <div className="profile-page">
         <UserPic />
-        <form>
+        <form >
           <div className="profile-user-info-div">
             <div className="profile-username">
-              <label htmlFor="username">USERNAME:</label>
-              <input type="text" name="username" value="(login.username)"/>
+              <label htmlFor="username">USERNAME:{this.props.username}</label>
+              
             </div>
             <div className="profile-display-Name">
               <label htmlFor="displayName">DISPLAYNAME:</label>
-              <input type="text" name="displayName" value="(login.displayname)"/>
+              <input type="text" name="displayName"/>
             </div>
             
             
@@ -35,6 +39,7 @@ class ProfilePage extends Component {
           </div>
         </form>
         <DeleteAccount />
+        <NavLink exact to ="/" activeClassName="selected"><button>Feed</button></NavLink>
       </div>
     );
   }
@@ -110,5 +115,12 @@ class ProfilePage extends Component {
 //     active: state.active
 //   }
 // }
-
-export default ProfilePage;
+export default connect(
+  ({ /*auth,*/ users }) => ({
+    //loginInfo: auth.login,
+    username: users.currentUsername,
+    displayName: users.currentDisplayName,
+    about: users.currentAbout
+  }),
+  { user }
+)(ProfilePage);
