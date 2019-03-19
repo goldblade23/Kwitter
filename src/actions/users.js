@@ -1,7 +1,27 @@
-//create action creator function to receive updated info
-//(password, username) which comes from the component layer
+import { domain, handleJsonResponse } from "./constants";
 
-//fetch request inside action creator function
-//connect, mapdispatch to props will wrap the action creator call in dispatch
-//action creator object goes to the reducer
+export const SETCURRENTUSER = "SETCURRENTUSER";
 
+const url = domain + "/users/";
+
+export const user = id => dispatch => {
+    return fetch(url + id)
+      .then(handleJsonResponse)
+      .then(result => {
+          return dispatch({
+              type: SETCURRENTUSER,
+              payload: result.user
+          })
+      })
+  };
+  
+  export const userUpdate = id => dispatch => {
+    return fetch(url + id)
+      .then(handleJsonResponse)
+      .then(result => {
+          return dispatch({
+              type: SETCURRENTUSER,
+              payload: result.user
+          })
+      })
+  };

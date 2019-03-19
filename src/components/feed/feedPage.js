@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import Message from "./message.js"
+import { connect } from "react-redux";
+import { user } from "../../actions"
+import { NavLink} from "react-router-dom";
 
 class FeedPage extends Component {
+
+    componentDidMount() {
+        this.props.user(this.props.loginInfo.id)
+    }
+
     render() {
+        console.log(this.props.loginInfo.id)
       return (
       <div className="profile-Page">
         <div className="user-column">
@@ -10,9 +19,10 @@ class FeedPage extends Component {
             <div className="userPic"></div>
                 <div className="current-user-data">
                     
-                    <p>Displayname:(currentuser.displayname)</p>
-                    <p>About:(currentuser.bio)</p>
+                    <p>Displayname:{this.props.displayName}</p>
+                    <p>About:{this.props.about}</p>
                 </div>
+                <NavLink exact to ="/profile" activeClassName="selected"><button>profile</button></NavLink>
         </div>
         
         <div className="feed-column">
@@ -29,11 +39,17 @@ class FeedPage extends Component {
                     <button className="message-submit">submit</button>
                 </div>
         </div>
-        
-      
       
       </div>
     )}
 }
 
-export default FeedPage
+export default connect(
+    ({ auth, users }) => ({
+      loginInfo: auth.login,
+      username: users.currentUsername,
+      displayName: users.currentDisplayName,
+      about: users.currentAbout
+    }),
+    { user }
+)(FeedPage);
