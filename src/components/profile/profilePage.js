@@ -6,27 +6,28 @@ import { connect } from "react-redux";
 // import { uploadUserPic } from "../../actions/auth"
   class ProfilePage extends Component {
 
-    state = {
-      active: false,
-      changeCurrentPassword: false,
-      passwordValue: "",
-      displayName: "",
-      about: ""
 
-    }
+class ProfilePage extends Component {
+  state = {
+    active: false,
+    changeCurrentPassword: false,
+    passwordValue: "",
+    displayName: "",
+    about: ""
+  };
 
-    addNewPassword = (e) => {
-      if (e.key === "Enter" && this.state.value !== "") {
-        console.log(this.state.value)
-        this.props.addNewPassword(this.state.value)
-        e.target.value = ""
-      }
+  addNewPassword = e => {
+    if (e.key === "Enter" && this.state.value !== "") {
+      console.log(this.state.value);
+      this.props.addNewPassword(this.state.value);
+      e.target.value = "";
     }
-    handleInputChange = (e) => {
-      this.setState({ value: e.target.value });
-    };
+  };
+  handleInputChange = e => {
+    this.setState({ value: e.target.value });
+  };
   render() {
-    // const {isLoading} = this.props;
+    const { isLoading } = this.props;
     return (
           <Router>
             <div className="profile-page">

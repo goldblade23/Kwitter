@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-//import SignUpForm from "./signUp.js";
 import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../../actions/auth";
-//import Spinner from "react-spinkit";
-import { Link} from "react-router-dom";
+import Spinner from "react-spinkit";
+import { Link } from "react-router-dom";
+import { Button, Form, Grid, Image, Input, Segment } from "semantic-ui-react";
+import logo from "../../logo.svg";
+
 class LoginPage extends Component {
   state = { username: "", password: "" };
 
@@ -17,53 +19,68 @@ class LoginPage extends Component {
   };
 
   render() {
-    const { isLoading } = this.props;
+    const { isLoading, err } = this.props;
     return (
-      <div className="login-page">
-        <div className="login-form">
-          <form onSubmit={this.handleLogin}>
-            <div className="login-section">
-              <h2>LOGIN:</h2>
-              <div className="login-user-name">
-                <label htmlFor="username">USERNAME:</label>
-                <input
-                  type="text"
-                  name="username"
-                  autoFocus
-                  required
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div className="login-password">
-                <label htmlFor="password">PASSWORD:</label>
-                <input
-                  type="password"
-                  name="password"
-                  required
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="login-button">
-                <button type="submit" disabled={isLoading}>
-                  Login
-                </button>
-                <div className="signup-button">
-                {/* <NavLink exact to ="/register" activeClassName="selected"><button>Register Now!</button></NavLink> */}
-                <Link exact to ="/register"><button>Register Now!</button></Link>
-
+      <Grid
+        textAlign="center"
+        style={{ height: "100%" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 400 }}>
+          <Image src={logo} size="large" centered />
+          <div className="login-page">
+            <Form onSubmit={this.handleLogin} size="large">
+              <Segment stacked color="grey">
+                <h2>LOGIN:</h2>
+                <div className="login-user-name">
+                  <Form.Field
+                    name="username"
+                    label="Username:"
+                    required
+                    placeholder="Username"
+                    type="text"
+                    control={Input}
+                    autoFocus
+                    onChange={this.handleChange}
+                  />
                 </div>
-              </div>
-            </div>
-          </form>
-          {/* {isLoading && <Spinner name="circle" color="blue" />}
-          {err && <p style={{ color: "red" }}>{err}</p>} */}
-
-          {/* <div className="sign-Up-Button">
-                <button onClick={()=>this.props.signUpOpenForm()}>Sign Up</button>
-            </div> */}
-        </div>
-      </div>
+                <div className="login-password">
+                  <Form.Field
+                    name="password"
+                    label="Password:"
+                    required
+                    placeholder="Password"
+                    type="password"
+                    control={Input}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <Button.Group>
+                  <br />
+                  <Button
+                    className="login-button"
+                    type="submit"
+                    disabled={isLoading}
+                    positive
+                    size="large"
+                    to="/profile"
+                  >
+                    Login
+                  </Button>
+                  <Button.Or />
+                  <Link exact to="/register">
+                    <Button className="signup-button" size="large" color="blue">
+                      Register Now!
+                    </Button>
+                  </Link>
+                </Button.Group>
+              </Segment>
+            </Form>
+            {isLoading && <Spinner name="circle" color="blue" />}
+            {err && <p style={{ color: "red" }}>{err}</p>}
+          </div>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
