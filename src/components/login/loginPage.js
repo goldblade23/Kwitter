@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../../actions/auth";
 //import Spinner from "react-spinkit";
-
+import { Link} from "react-router-dom";
 class LoginPage extends Component {
   state = { username: "", password: "" };
 
@@ -49,9 +49,9 @@ class LoginPage extends Component {
                   Login
                 </button>
                 <div className="signup-button">
-                  <button type="submit" disabled={isLoading} to="/register">
-                    Register Now!
-                  </button>
+                {/* <NavLink exact to ="/register" activeClassName="selected"><button>Register Now!</button></NavLink> */}
+                <Link exact to ="/register"><button>Register Now!</button></Link>
+
                 </div>
               </div>
             </div>
