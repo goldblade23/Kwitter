@@ -21,7 +21,9 @@ class Logout extends Component {
         <Dimmer active={active} page>
           <Header icon inverted>
             <Icon name="heart" />
-            <Menu.Item>Thanks for visiting KWITTER! I hope we never see you again!</Menu.Item>
+            <Menu.Item>
+              Thanks for visiting KWITTER! I hope we never see you again!
+            </Menu.Item>
             <Divider />
             <Button
               name="logout"
@@ -29,7 +31,7 @@ class Logout extends Component {
               size="massive"
               color="red"
             >
-             Goodbye Forever. 
+              Goodbye Forever...
             </Button>
           </Header>
         </Dimmer>
