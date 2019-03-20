@@ -1,5 +1,6 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import { push } from "connected-react-router";
+import {downloadUserImage} from "."
 
 // action types
 export const LOGIN = "LOGIN";
@@ -40,9 +41,16 @@ const login = loginData => dispatch => {
     });
 };
 
-export const loginThenGoToUserProfile = loginData => dispatch => {
+export const loginThenGoToUserProfile = loginData => (dispatch,getState) => {
   return dispatch(login(loginData))
-  //.then(console.log(loginData))     
+  //.then(console.log(loginData)) 
+  .then(() => 
+  {
+    const id=getState().auth.login.id
+    return dispatch(downloadUserImage(id))
+  }
+  
+  )    
   .then(() => dispatch(push("/feed")));
 };
 
@@ -50,7 +58,7 @@ const register = registerData => dispatch => {
   dispatch({
     type: REGISTER
   });
-  console.log(registerData)
+  //console.log(registerData)
 
   return fetch(url + "/register", {
     method: "POST",

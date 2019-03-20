@@ -6,7 +6,6 @@ import ProfilePage from "./profile/profilePage.js";
 import { Route, Switch } from "react-router-dom";
 import SignUpForm from "./login/signUp.js";
 import FeedPage from "./feed/feedPage.js"
-//import { connectRouter } from "connected-react-router";
 //import { connect } from "react-redux";
 import { connectRouter } from "connected-react-router";
 
@@ -22,7 +21,7 @@ class App extends Component {
 
   render() {
 
-    //const {login} =this.props
+    const {login} =this.props
     return (
       <div className="App">
         <Title />
@@ -30,8 +29,8 @@ class App extends Component {
           <Route exact path="/" render={() => <LoginPage />} />
           <Route exact path="/register" render={() => <SignUpForm />} />
           <Route exact path="/profile" render={() => <ProfilePage />} />
-          {/* <Route exact path="/" render={() => login!==null ?  <LoginPage />: <FeedPage />} /> */}
           <Route exact path="/feed" render={() => <FeedPage />} />
+          {/* <Route exact path="/feed" render={() => login ?  <FeedPage />: <LoginPage />} /> */}
 
         </Switch>
       </div>

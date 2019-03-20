@@ -2,18 +2,29 @@ import React, { Component } from "react";
 import UserPic from "./userPic.js";
 import DeleteAccount from "./deleteAccount";
 import { NavLink} from "react-router-dom";
-import { user } from "../../actions"
+//import { user } from "../../actions"
 import { connect } from "react-redux";
+//import { userUpdate} from "../../actions/users";
+import { updateThenGoToUserProfile as update } from "../../actions/users";
 
 class ProfilePage extends Component {
-  state = { displayName: "", about: "" }
+  state = { displayName: "", PASSWORD:"", about: "" }
+
+  handleUpdate = e => {
+    e.preventDefault();
+    this.props.update({ state: this.state, loginInfo: this.props.loginInfo })
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   render() {
     const {isLoading} = this.props;
     return (
       <div className="profile-page">
         <UserPic />
-        <form>
+        <form onSubmit={this.handleUpdate}>
           
           <div className="profile-user-info-div">
             <div className="profile-username">
@@ -22,74 +33,46 @@ class ProfilePage extends Component {
             </div>
 
             <div className="profile-display-Name">
-              <label htmlFor="displayName">DISPLAYNAME:</label>
-              <input type="text" name="displayName"/>
+              <label htmlFor="displayName">DISPLAYNAME CHANGE:</label>
+              <input type="text" name="displayName" required
+                  onChange={this.handleChange}/>
             </div>
 
+            <div className="profile-password">
+              <label htmlFor="password">PASSWORD CHANGE:</label>
+              <input type="password" name="password" required
+                  onChange={this.handleChange}/>
+            </div>
             
             <div className="profile-user-bio-div">
               <div className="profile-bio">
                 <label>
                   About me:
-                 <textarea rows="4" cols="40" name="about" />
+                 <textarea rows="4" cols="40" name="about" required
+                  onChange={this.handleChange}/>
                 </label>
               </div>
             </div>
 
 
           <div className="profile-Submit-Button">
-            <button>Submit</button>
+            <button type="submit" disabled={isLoading}>Submit</button>
           </div>
 
         </form>
         <DeleteAccount />
-        <NavLink exact to ="/" activeClassName="selected"><button>Feed</button></NavLink>
+        <NavLink exact to ="/feed" activeClassName="selected"><button>Feed</button></NavLink>
       </div>
     );
   }
 }
 
-{/* class UserPic extends Component {
-  state = {
-    active: false,
-    selectedFile: null
-  }
-  fileSelectedHandler = e => {
-    console.log("yes")
-    this.setState({
-      selectedFile: e.target.files[0]
-    })
-  } */}
-
-  //fileUPloadHandler = () => {
-  //  image.post(' ')
-  //}
-
-//   render() {
-//     return (
-//       <div className="profileUserPicDiv">
-//         <div className="profile-user-pic">
-//           <label for="profileUserPic"></label>
-//           <input type="file" onChange={this.fileChangeHandler} />
-//           <button onClick={this.fileUploadHandler}>Upload a Photo</button>
-          
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-
-// const mapStateToProps = state => {
-//   return {
-//     active: state.active
-//   }
-// }
 export default connect(
-  ({ /*auth,*/ users }) => ({
-    //loginInfo: auth.login,
+  ({ auth, users }) => ({
+    loginInfo: auth.login,
     username: users.currentUsername,
     displayName: users.currentDisplayName,
-    about: users.currentAbout
+    about: users.currentAbout,
   }),
-  { user }
+  { update }
 )(ProfilePage);

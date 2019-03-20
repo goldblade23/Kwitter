@@ -5,14 +5,14 @@ class Message extends Component {
       return (
           <div className="message-format">
              <div className="message-user-info">
-                <div className="message-pic">(pic)</div>
-                <div className="message-user">(username)</div>
+                <div className="message-pic"><img src={this.props.image}/></div>
+                <div className="message-user">{this.props.displayName}</div>
             </div>   
-          <div className="message-output">(message)</div>
+          <div className="message-output">{this.props.text}</div>
 
             <div className="likes-dislikes">
-                <div>likes:0</div>   
-                <div>dislikes:0</div>
+                <div>likes:{this.props.likes.length}</div>   
+                {/* <div>dislikes:0</div> */}
             </div> 
           </div>
     )}

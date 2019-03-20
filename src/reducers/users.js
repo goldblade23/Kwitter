@@ -1,20 +1,59 @@
-import {SETCURRENTUSER} from "../actions/users"
+import {
+  SETCURRENTUSER,
+  UPDATE,
+  UPDATE_FAIL,
+  UPDATE_SUCCESS,
+  GETUSERS,
+  GETUSERS_SUCCESS,
+  DOWNLOAD_USER_IMAGE,
+  DOWNLOAD_USER_IMAGE_SUCCESS
+} from "../actions/users";
+
+import logo from "../logo.svg"
 
 const initialState = {
-  currentUsername: '',
-  currentDisplayName: '',
-  currentAbout: ''
+  currentUsername: "",
+  currentDisplayName: "",
+  currentAbout: "",
+  updateLoading: false,
+  update: null,
+  updateError: null,
+  usersList: [],
+  usersImages: {},
+  defaultImage: logo
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    
     case SETCURRENTUSER:
-    return { ...state, 
-      currentUsername: action.payload.username,
-      currentDisplayName: action.payload.displayName,
-      currentAbout:action.payload.about,
-    };
+      return {
+        ...state,
+        currentUsername: action.payload.username,
+        currentDisplayName: action.payload.displayName,
+        currentAbout: action.payload.about
+      };
+    case GETUSERS:
+      return state;
+
+    case GETUSERS_SUCCESS:
+      return { ...state, usersList: action.payload.users };
+
+    case UPDATE:
+      return { ...state, updateLoading: true, updateError: null };
+
+    case UPDATE_SUCCESS:
+      return { ...state, update: action.payload, updateLoading: false };
+
+    case UPDATE_FAIL:
+      return { ...state, updateError: action.payload, updateLoading: false };
+
+    case DOWNLOAD_USER_IMAGE:
+      return state;
+    case DOWNLOAD_USER_IMAGE_SUCCESS:
+      return {
+        ...state,
+        usersImages: { ...state.usersImages, [action.id]: action.payload }
+      };
     default:
       return state;
   }
