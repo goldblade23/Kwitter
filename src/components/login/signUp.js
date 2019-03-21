@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { registerThenGoToUserProfile as register } from "../../actions/auth";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Input,
+  Segment
+} from "semantic-ui-react";
+import logo from "../../logo.svg";
 
 class SignUpForm extends Component {
-  state = { username: "", password: "", displayName:"" };
+  state = { username: "", password: "", displayName: "" };
 
   handleRegister = e => {
     e.preventDefault();
@@ -18,49 +28,73 @@ class SignUpForm extends Component {
   render() {
     const { isLoading } = this.props;
     return (
-      <div className="sign-up-form">
-        <form onSubmit={this.handleRegister}>
-          <h2>Sign Up:</h2>
-          <div className="signup-user-name">
-            <label htmlFor="username">USERNAME:</label>
-            <input
-              type="text"
-              name="username"
-              required
-              onChange={this.handleChange}
-            />
-          </div>
-   
-   <div className="displayName">
-            <label htmlFor="displayName">DISPLAYNAME:</label>
-            <input
-              type="text"
-              name="displayName"
-              required
-              onChange={this.handleChange}
-            />
-          </div>
-          
-          <div className="sign-up-password">
-            <label htmlFor="password">PASSWORD:</label>
-            <input
-              type="password"
-              name="password"
-              required
-              onChange={this.handleChange}
-            />
-          </div>
-
-          
-          <div className="sign-up-submit-button">
-            <button type="submit" disabled={isLoading}>
-              Submit
-            </button>
-          </div>
-          <Link exact to ="/" ><button>Login</button></Link>
-        </form>
-        
-      </div>
+      <Grid
+        textAlign="center"
+        style={{ height: "100%" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Image src={logo} size="small" centered />
+          <Segment stacked color="grey">
+            <Header as="h2" color="grey" textAlign="center">
+              Sign Up:
+            </Header>
+            <Form size="large" onSubmit={this.handleRegister}>
+              <div className="signup-user-name">
+                <Form.Field
+                  label="Username:"
+                  required
+                  placeholder="Username"
+                  type="text"
+                  control={Input}
+                  autoFocus
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="signup-display-name">
+                <Form.Field
+                  label="Display Name:"
+                  required
+                  placeholder="Display Name"
+                  type="text"
+                  control={Input}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="sign-up-password">
+                <Form.Field
+                  label="Password:"
+                  required
+                  placeholder="Password"
+                  type="password"
+                  control={Input}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <br />
+              <Button.Group>
+                <div className="sign-up-submit-button">
+                  <Button
+                    positive
+                    size="large"
+                    onClick={this.handleRegister}
+                    type="submit"
+                    disabled={isLoading}
+                  >
+                    Register Now
+                  </Button>
+                </div>
+                <Button.Or />
+                <Link exact to="/">
+                  <Button size="large" color="brown">
+                    Login Here
+                  </Button>
+                </Link>
+              </Button.Group>
+            </Form>
+          </Segment>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
