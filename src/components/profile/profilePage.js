@@ -92,7 +92,7 @@ class ProfilePage extends Component {
       //             fileBeingChanged:event.target.files[0]
       //         })
       //     }
-      
+      //
       //     fileUploadHandler = () => {
       //         picture.post(' ')
       //     }
