@@ -11,6 +11,14 @@ export const REGISTER = "REGISTER";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
+// const for logout
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT = "LOGOUT";
+export const LOGOUT_FAIL = "LOGOUT_FAIL";
+
+export const LOGOUTCURRENTUSER = "LOGOUTCURRENTUSER"
+
+
 const url = domain + "/auth";
 
 // action creators
@@ -43,7 +51,6 @@ const login = loginData => dispatch => {
 
 export const loginThenGoToUserProfile = loginData => (dispatch,getState) => {
   return dispatch(login(loginData))
-  //.then(console.log(loginData)) 
   .then(() => 
   {
     const id=getState().auth.login.id
@@ -58,7 +65,6 @@ const register = registerData => dispatch => {
   dispatch({
     type: REGISTER
   });
-  //console.log(registerData)
 
   return fetch(url + "/register", {
     method: "POST",
@@ -86,8 +92,42 @@ const register = registerData => dispatch => {
 
 export const registerThenGoToUserProfile = registerData => dispatch => {
   return dispatch(register(registerData))
-  //.then(() => dispatch(push("/")));
   .then(() => dispatch(loginThenGoToUserProfile(registerData)));
 };
 
+const logout = logoutData => (dispatch, getState) => {
+  const token = getState().auth.login.token
+  dispatch({
+    type: LOGOUT
+  });
+
+  return fetch(url + "/logout", {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer" + token,
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify(logoutData)
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: LOGOUT_SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(
+        dispatch({
+          type: LOGOUT_FAIL,
+          payload: alert("Incorrect login or password.")
+        })
+      );
+    });
+};
+
+export const logoutThenGoToLogin = logoutData => dispatch => {
+  return dispatch(logout(logoutData))
+  .then(() => dispatch(push("/")));
+};
 

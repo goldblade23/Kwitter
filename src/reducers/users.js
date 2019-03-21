@@ -6,10 +6,12 @@ import {
   GETUSERS,
   GETUSERS_SUCCESS,
   DOWNLOAD_USER_IMAGE,
-  DOWNLOAD_USER_IMAGE_SUCCESS
+  DOWNLOAD_USER_IMAGE_SUCCESS,
+  DELETEUSER,
+  DELETEUSER_SUCCESS
 } from "../actions/users";
 
-import logo from "../logo.svg"
+import logo from "../blank-profile.png"
 
 const initialState = {
   currentUsername: "",
@@ -20,7 +22,8 @@ const initialState = {
   updateError: null,
   usersList: [],
   usersImages: {},
-  defaultImage: logo
+  defaultImage: logo,
+  deletemessage:null
 };
 
 export default (state = initialState, action) => {
@@ -54,6 +57,11 @@ export default (state = initialState, action) => {
         ...state,
         usersImages: { ...state.usersImages, [action.id]: action.payload }
       };
+    case DELETEUSER:
+      return state
+    
+      case DELETEUSER_SUCCESS:
+      return {...state, deletemessage:action.payload}
     default:
       return state;
   }

@@ -4,7 +4,11 @@ import {
   LOGIN_FAIL,
   REGISTER,
   REGISTER_SUCCESS,
-  REGISTER_FAIL
+  REGISTER_FAIL,
+  LOGOUTCURRENTUSER,
+  LOGOUT,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAIL
 } from "../actions/auth.js";
 
 const initialState = {
@@ -17,7 +21,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  //console.log(action.type)
   switch (action.type) {
     case LOGIN:
       return { ...state, loginLoading: true, loginError: null };
@@ -36,6 +39,18 @@ export default (state = initialState, action) => {
 
     case REGISTER_FAIL:
       return {...state,registerError: action.payload, registerLoading: false};
+
+    case LOGOUTCURRENTUSER:
+      return {initialState}
+
+      case LOGOUT:
+      return { ...state, logoutLoading: true, logoutError: null };
+
+    case LOGOUT_SUCCESS:
+      return { ...state, logout: action.payload, logoutLoading: false };
+
+    case LOGOUT_FAIL:
+      return {...state,logoutError: action.payload, logoutLoading: false};
 
     default:
       return state;

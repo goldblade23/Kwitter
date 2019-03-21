@@ -51,11 +51,7 @@ class SignUpForm extends Component {
             />
           </div>
 
-          <div className="sign-up-displayName">
-            <label htmlFor="displayName">DISPLAYNAME:</label>
-            <input type="text" name="displayName" required 
-              onChange={this.handleChange}/>
-          </div>
+          
           <div className="sign-up-submit-button">
             <button type="submit" disabled={isLoading}>
               Submit

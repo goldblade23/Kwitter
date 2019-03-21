@@ -13,6 +13,9 @@ export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
  export const DOWNLOAD_USER_IMAGE="DOWNLOAD_USER_IMAGE"
  export const DOWNLOAD_USER_IMAGE_SUCCESS="DOWNLOAD_USER_IMAGE_SUCCESS"
 
+ export const DELETEUSER="DELETEUSER"
+ export const DELETEUSER_SUCCESS="DELETEUSER_SUCCESS"
+
 const url = domain + "/users/";
 
 export const user = id => dispatch => {
@@ -31,7 +34,7 @@ export const user = id => dispatch => {
       type: GETUSERS
     })
     
-    return fetch(url)
+    return fetch(url + "?limit=10000")
       .then(handleJsonResponse)
       .then(result => {
           return dispatch({
@@ -85,12 +88,10 @@ fetch(url, {
 
   };
 
-  //export const updateUser = newUserData => (dispatch, getState) => {}
-     
+    
   export const updateThenGoToUserProfile = newUserData => dispatch => {
     return dispatch(userUpdate(newUserData))
   };
-   
     
     export const downloadUserImage=id=>dispatch=>{
       dispatch({
@@ -105,6 +106,29 @@ fetch(url, {
           type: DOWNLOAD_USER_IMAGE_SUCCESS,
           payload: URL.createObjectURL(result),id
         })
+        
       })
       
     }
+
+    //
+   export const deleteUser = ()=> (dispatch,getState)=>{
+    const token = getState().auth.login.token
+    dispatch({
+      type:DELETEUSER
+    })
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json"
+      },
+    })
+    .then(result => {
+      return dispatch({
+          type: DELETEUSER_SUCCESS,
+          payload: alert(getState().auth.login.id + " has been deleted bro."),
+      })
+    
+  })
+   }
