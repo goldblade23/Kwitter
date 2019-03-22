@@ -16,6 +16,7 @@ export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
  export const DELETEUSER="DELETEUSER"
  export const DELETEUSER_SUCCESS="DELETEUSER_SUCCESS"
 
+// export const UPLOAD_USER_PIC = "UPLOAD_USER_PIC";
 const url = domain + "/users/";
 
 export const user = id => dispatch => {
@@ -108,10 +109,7 @@ fetch(url, {
         })
         
       })
-      
     }
-
-    //
    export const deleteUser = ()=> (dispatch,getState)=>{
     const token = getState().auth.login.token
     dispatch({
@@ -129,6 +127,34 @@ fetch(url, {
           type: DELETEUSER_SUCCESS,
           payload: alert(getState().auth.login.id + " has been deleted bro."),
       })
-    
   })
    }
+
+
+//   export const uploadUserPic = ({ picture }) => (dispatch, getState) => {
+  
+//    const token = getState().auth.login.token
+//    let profileFormData = newProfileFormData();    //Should this be newUserData?
+ 
+//    profileFormData.append("picture", picture)
+ 
+//    dispatch({
+//      type: UPLOAD_USER_PIC
+//    });
+
+//    return fetch(url + "/users/picture", profileFormData {
+//      method: "POST",
+//      headers: {
+//        Authorization: "Bearer" + token,
+//        "Content-Type" : "multipart/form-data"
+//      }
+//    })
+//      .then(res => {
+//        if (res.status == 200) {
+//          downloadUserImage(dispatch, getState().login.id)
+//        }
+//        })
+//      .catch(err =>
+//        console.log("Upload is not working, bro.")
+//      );
+//  }

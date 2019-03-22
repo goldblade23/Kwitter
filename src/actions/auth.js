@@ -130,4 +130,3 @@ export const logoutThenGoToLogin = logoutData => dispatch => {
   return dispatch(logout(logoutData))
   .then(() => dispatch(push("/")));
 };
-

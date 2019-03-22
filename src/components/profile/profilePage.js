@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import UserPic from "./userPic.js";
-import DeleteAccount from "./deleteAccount";
-import { NavLink } from "react-router-dom";
+// import DeleteAccount from "./deleteAccount";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateThenGoToUserProfile as update } from "../../actions/users";
+import { Button, Form, Divider, Card, CardComponent, Image } from 'semantic-ui-react'
+
 
 class ProfilePage extends Component {
   state = { displayName: "", PASSWORD: "", about: "" };
@@ -18,63 +20,53 @@ class ProfilePage extends Component {
   };
 
   render() {
-    const { isLoading } = this.props;
+  
     return (
       <div className="profile-page">
-        <UserPic />
-        <form onSubmit={this.handleUpdate}>
-          <div className="profile-user-info-div">
-            <div className="profile-username">
-              <label htmlFor="username">USERNAME:{this.props.username}</label>
-            </div>
-          </div>
+      <Link exact to="/feed">
+      <Form.Button floated='right'>Return to Feed</Form.Button>
+      </Link>
+      {/* <Card>
+    <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' />
+    <Card.Content>
+      <Card.Header>{this.props.displayName}</Card.Header>
+      <Card.Description>{this.props.about}</Card.Description>
+    </Card.Content>
+  </Card> */}
 
-          <div className="profile-display-Name">
-            <label htmlFor="displayName">DISPLAYNAME CHANGE:</label>
+        {/* <UserPic/> */}
+        <Form onSubmit={this.handleUpdate}>
+        <Divider />
+          <Form.Field>
+            <label>Display Name: {this.props.displayName}</label>
+            <label>User Name: {this.props.username}</label>
+          </Form.Field>
+          <Divider />
+          <Form.Field>
+          <label>Make Changes to Your Account</label>
             <input
+              placeholder='Change Display Name'
               type="text"
               name="displayName"
-              required
               onChange={this.handleChange}
             />
-          </div>
-
-          <div className="profile-password">
-            <label htmlFor="password">PASSWORD CHANGE:</label>
+          </Form.Field>
+          <Form.Field>
             <input
+              placeholder='Change Password'
               type="password"
               name="password"
-              required
               onChange={this.handleChange}
             />
-          </div>
-
-          <div className="profile-user-bio-div">
-            <div className="profile-bio">
-              <label>
-                About me:
-                <textarea
+          </Form.Field>
+          <Form.TextArea placeholder='Change Your "About Me" Section And Tell the world who you are...' 
                   rows="4"
                   cols="40"
                   name="about"
-                  required
-                  onChange={this.handleChange}
-                />
-              </label>
-            </div>
+                  onChange={this.handleChange} />
+          <Form.Button onSubmit={this.handleUpdate}>Submit Changes to Profile</Form.Button>
+          </Form>
           </div>
-
-          <div className="profile-Submit-Button">
-            <button type="submit" disabled={isLoading}>
-              Submit
-            </button>
-          </div>
-        </form>
-        <DeleteAccount />
-        <NavLink exact to="/feed" activeClassName="selected">
-          <button>Feed</button>
-        </NavLink>
-      </div>
     );
   }
 }

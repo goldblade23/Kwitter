@@ -8,15 +8,15 @@ import {
   updateAfterPosting as postMessage
 } from "../../actions";
 import { NavLink } from "react-router-dom";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Input,
-  Segment
-} from "semantic-ui-react";
+// import {
+//   Button,
+//   Form,
+//   Grid,
+//   Header,
+//   Image,
+//   Input,
+//   Segment
+// } from "semantic-ui-react";
 
 class FeedPage extends Component {
   state = { text: "" };
@@ -41,11 +41,11 @@ class FeedPage extends Component {
     //console.log(this.props.loginInfo.token)
     console.log(this.props.userList);
     return (
-      <Grid
-        textAlign="center"
-        style={{ height: "100%" }}
-        verticalAlign="middle"
-      >
+      // <Grid
+      //   textAlign="center"
+      //   style={{ height: "100%" }}
+      //   verticalAlign="middle"
+      // >
       <div className="profile-Page">
         <div className="user-column">
           <div className="user-Header">User data</div>
@@ -100,7 +100,7 @@ class FeedPage extends Component {
           </form>
         </div>
       </div>
-      </Grid>
+      // </Grid>
     );
   }
 }
