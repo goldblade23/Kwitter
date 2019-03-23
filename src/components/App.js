@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import SignUpForm from "./login/signUp.js";
 import FeedPage from "./feed/feedPage.js";
 import { connectRouter } from "connected-react-router";
+import NavBar from "./navBar";
 
 class App extends Component {
   render() {
@@ -15,11 +16,16 @@ class App extends Component {
       <div className="App">
         <Title />
         <Switch>
+          <Route exact path="/profile" render={() => <NavBar />} />
+          <Route exact path="/feed" render={() => <NavBar />} />
+          {/* <Route exact path="/feed" render={() => login ?  <FeedPage />: <LoginPage />} /> */}
+        </Switch>
+        <Switch>
           <Route exact path="/" render={() => <LoginPage />} />
           <Route exact path="/register" render={() => <SignUpForm />} />
           <Route exact path="/profile" render={() => <ProfilePage />} />
           <Route exact path="/feed" render={() => <FeedPage />} />
-          {/* <Route exact path="/feed" render={() => login ?  <FeedPage />: <LoginPage />} /> */}
+
         </Switch>
       </div>
     );

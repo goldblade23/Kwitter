@@ -49,6 +49,7 @@ class SignUpForm extends Component {
                   control={Input}
                   autoFocus
                   onChange={this.handleChange}
+                  name="username"
                 />
               </div>
               <div className="signup-display-name">
@@ -59,6 +60,7 @@ class SignUpForm extends Component {
                   type="text"
                   control={Input}
                   onChange={this.handleChange}
+                  name="displayName"
                 />
               </div>
               <div className="sign-up-password">
@@ -69,6 +71,7 @@ class SignUpForm extends Component {
                   type="password"
                   control={Input}
                   onChange={this.handleChange}
+                  name="password"
                 />
               </div>
               <br />

@@ -1,19 +1,19 @@
-// import React, { Component } from "react";
-// import { connect } from "react-redux";
-// //import { deleteAccount } from "./actions.js"
-// import { deleteUser } from "../../actions/users";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+//import { deleteAccount } from "./actions.js"
+import { deleteUser } from "../actions";
+import { Button } from "semantic-ui-react";
+class DeleteAccount extends Component {
+  render() {
+    return (
+      <div className="delete-account-div">
+        <Button color="red" onClick={this.props.deleteUser}>Delete Account</Button>
+      </div>
+    );
+  }
+}
 
-// class DeleteAccount extends Component {
-//   render() {
-//     return (
-//       <div className="delete-account-div">
-//         <button onClick={this.props.deleteUser}>Delete Account</button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default connect(
-//   null,
-//   {deleteUser}
-// )(DeleteAccount);
+export default connect(
+  null,
+  {deleteUser}
+)(DeleteAccount);

@@ -9,7 +9,8 @@ import {
   DOWNLOAD_USER_IMAGE_SUCCESS,
   DELETEUSER,
   DELETEUSER_SUCCESS,
-  UPLOAD_USER_PIC
+  UPLOADIMAGE,
+  UPLOADIMAGE_SUCCESS
 } from "../actions/users";
 
 import logo from "../blank-profile.png"
@@ -24,7 +25,7 @@ const initialState = {
   usersList: [],
   usersImages: {},
   defaultImage: logo,
-  deletemessage:null
+  deletemessage:null,
   // uploadUserPic: {}
 };
 
@@ -65,6 +66,11 @@ export default (state = initialState, action) => {
     
       case DELETEUSER_SUCCESS:
       return {...state, deletemessage:action.payload}
+
+    case UPLOADIMAGE:
+      return state
+    case UPLOADIMAGE_SUCCESS:
+      return state
     default:
       return state;
   }

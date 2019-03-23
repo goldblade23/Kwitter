@@ -38,19 +38,23 @@ export default (state = initialState, action) => {
       return { ...state, register: action.payload, registerLoading: false };
 
     case REGISTER_FAIL:
-      return {...state,registerError: action.payload, registerLoading: false};
+      return {
+        ...state,
+        registerError: action.payload,
+        registerLoading: false
+      };
 
     case LOGOUTCURRENTUSER:
-      return {initialState}
+      return { initialState };
 
-      case LOGOUT:
+    case LOGOUT:
       return { ...state, logoutLoading: true, logoutError: null };
 
     case LOGOUT_SUCCESS:
       return { ...state, logout: action.payload, logoutLoading: false };
 
     case LOGOUT_FAIL:
-      return {...state,logoutError: action.payload, logoutLoading: false};
+      return { ...state, logoutError: action.payload, logoutLoading: false };
 
     default:
       return state;

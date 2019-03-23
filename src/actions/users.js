@@ -1,5 +1,6 @@
 import { domain, handleJsonResponse } from "./constants";
 import { push } from "connected-react-router";
+import {getMessages} from "."
 //import {auth} from "../reducers/auth.js"
 
 export const SETCURRENTUSER = "SETCURRENTUSER";
@@ -15,6 +16,12 @@ export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
 
  export const DELETEUSER="DELETEUSER"
  export const DELETEUSER_SUCCESS="DELETEUSER_SUCCESS"
+
+ export const UPLOADIMAGE="UPLOADIMAGE"
+ export const UPLOADIMAGE_SUCCESS="UPLOADIMAGE_SUCCESS"
+
+//  export const GETUSERSANDMESSAGES="GETUSERSANDMESSAGES"
+//  export const GETUSERSANDMESSAGES_SUCCESS="GETUSERSANDMESSAGES_SUCCESS"
 
 // export const UPLOAD_USER_PIC = "UPLOAD_USER_PIC";
 const url = domain + "/users/";
@@ -45,6 +52,19 @@ export const user = id => dispatch => {
       })
   };
 
+  export const getMessagesAndUserPics = ()=> (dispatch,getState) => {
+    dispatch(getMessages())
+    .then(()=>{
+      const messages=getState().messages.list
+      const usersImages=getState().users.usersImages
+      messages.forEach(message=>{
+        const id=message.userId
+        if(usersImages[id] === undefined){
+            dispatch(downloadUserImage(id))
+        }
+      })
+    })
+  }
 
   //---------
   const userUpdate = newUserData => dispatch => {
@@ -94,22 +114,60 @@ fetch(url, {
     return dispatch(userUpdate(newUserData))
   };
     
-    export const downloadUserImage=id=>dispatch=>{
+
+  
+    export const downloadUserImage=id=>(dispatch,getState)=>{
       dispatch({
         type:DOWNLOAD_USER_IMAGE
       })
       return fetch(url + id + "/picture")
       .then(res=>{
-        return res.blob()
+        if(res.status===200){
+        return res.blob().then(blob=>URL.createObjectURL(blob))
+      }else{
+        return getState().users.defaultImage
+      }
       })
       .then(result => {
         return dispatch({
           type: DOWNLOAD_USER_IMAGE_SUCCESS,
-          payload: URL.createObjectURL(result),id
+          payload: result,id
         })
         
       })
     }
+    
+
+export const uploadImage =  imageData=> (dispatch,getState)=>{
+  const token = getState().auth.login.token
+  dispatch({
+    type:UPLOADIMAGE
+  })
+  return fetch(url + "picture", {
+    method: "PUT",
+    headers: {
+      Authorization: "Bearer " + token,
+      //  "Content-Type": "multipart/form-data",
+     }, 
+     body:imageData
+  })
+  .then(res=>{
+    if(res.status===500){
+    alert("image failed to upload!")
+  }
+  })
+  .then(result => {
+    return dispatch({
+        type: UPLOADIMAGE_SUCCESS,
+        payload: result
+    })
+})
+}
+export const updateUserImage =  imageData=> (dispatch,getState) => {
+  return dispatch(uploadImage(imageData))
+  .then(() => dispatch(downloadUserImage(getState().auth.login.id)))
+};
+
    export const deleteUser = ()=> (dispatch,getState)=>{
     const token = getState().auth.login.token
     dispatch({
@@ -123,10 +181,12 @@ fetch(url, {
       },
     })
     .then(result => {
-      return dispatch({
+       dispatch({
           type: DELETEUSER_SUCCESS,
-          payload: alert(getState().auth.login.id + " has been deleted bro."),
+          payload: alert(getState().users.currentUsername + " has been deleted bro."),
       })
+
+      return dispatch(push("/"))
   })
    }
 

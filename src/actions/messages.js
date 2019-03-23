@@ -12,7 +12,7 @@ export const getMessages=()=>dispatch=>{
         type:GETMESSAGES
     });
 
-    return fetch(url + "?limit=10000")
+    return fetch(url + "?limit=50")
     .then(handleJsonResponse)
     .then(result =>{
         return dispatch({
