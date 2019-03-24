@@ -27,7 +27,7 @@ class Message extends Component {
                 <Card.Meta>{this.props.displayName}</Card.Meta>
               </Card.Description>
               <Card.Description className="message-output">
-                <Card.Meta>{this.props.text}</Card.Meta>
+                <Card.Meta>{this.props.text} bro!</Card.Meta>
               </Card.Description>
               <Card.Description className="likes-dislikes">
                 <Card.Meta>likes:{this.props.likes.length}</Card.Meta>
