@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logout from "./login/logout";
+import Logout from "./login/Logout.js";
 import { Container, Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 

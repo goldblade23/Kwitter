@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserPic from "./userPic.js";
+import UserPic from "./UserPic.js";
 // import DeleteAccount from "./deleteAccount";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -8,7 +8,7 @@ import {
   Form,
   Card,
 } from "semantic-ui-react";
-import DeleteAccount from "../deleteAccount";
+import DeleteAccount from "../DeleteAccount";
 
 class ProfilePage extends Component {
   state = { displayName: "", PASSWORD: "", about: "" };
