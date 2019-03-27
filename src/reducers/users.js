@@ -13,7 +13,7 @@ import {
   UPLOADIMAGE_SUCCESS
 } from "../actions/users";
 
-import logo from "../blank-profile.png"
+import logo from "../images/blank-profile.png"
 
 const initialState = {
   currentUsername: "",

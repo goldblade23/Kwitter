@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Logout from "./login/logout";
+// import Logout from "./login/logout";
 import {  Header, Image } from "semantic-ui-react";
-import logo from "../kwitterBro2.png"
+import logo from "../images/kwitterBro2.png"
 
-const titleImage = 'kwitterBro.png'
 class Title extends Component {
   render() {
     

@@ -4,7 +4,7 @@ import { loginThenGoToUserProfile as login } from "../../actions/auth";
 import Spinner from "react-spinkit";
 import { Link } from "react-router-dom";
 import { Button, Form, Grid, Image, Input, Segment } from "semantic-ui-react";
-import logo from "../../quitters.png";
+import logo from "../../images/quitters.png";
 
 class LoginPage extends Component {
   state = { username: "", password: "" };
