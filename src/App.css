@@ -86,6 +86,7 @@ height: 300;
   border:1px solid;
   width:200px;
   height: 150px;
+  word-wrap: break-word;
 }
 
 .message-user-info{
@@ -106,7 +107,8 @@ height: 300;
 
 .message-output{
   border:1px solid;
-  height: 80px;
+  height: 300px;
+  word-wrap: break-word;
 }
 
 .likes-dislikes{

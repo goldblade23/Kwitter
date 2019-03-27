@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Logout from "./login/logout";
-import { Container, Image, Menu } from "semantic-ui-react";
+import { Container, Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 class NavBar extends Component {
-  state = { activeItem: "profile" };
+  state = { activeItem: "" };
 
   handleItemClick = (event, { name }) => this.setState({ activeItem: name });
 
@@ -13,7 +13,7 @@ class NavBar extends Component {
 
     return (
       <Container>
-        <Menu pointing color="yellow" inverted>
+        <Menu color="yellow" inverted>
           <Menu.Item header inverted>
             Kwitter
           </Menu.Item>

@@ -39,3 +39,5 @@ A starter scaffolding is provided here: [https://gitlab.com/kenzie-academy/se/fe
 ## Submission
 
 For submission, you must include a link to the project repo, the deployed instance of your frontend project, and the deployed kwitter api backend.
+
+add config variable to heroku cli (config set)

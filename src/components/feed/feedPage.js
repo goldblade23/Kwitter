@@ -17,8 +17,7 @@ import {
   Image,
   Menu,
   Segment,
-  Form,
-  TextArea
+  Form
 } from "semantic-ui-react";
 
 class FeedPage extends Component {
@@ -156,70 +155,3 @@ export default connect(
   }),
   { user, getMessages, postMessage, getUsers }
 )(FeedPage);
-
-/*
-      <Grid
-        textAlign="center"
-        style={{ height: "100%" }}
-        verticalAlign="middle"
-      >
-      <div className="profile-Page">
-        <div className="user-column">
-          <div className="user-Header">User data</div>
-          <div className="userPic">
-            <img
-              alt=""
-              src={this.props.userimage}
-              style={{ maxHeight: "100px", maxWidth: "100px" }}
-            />
-          </div>
-          <div className="current-user-data">
-            <p>Displayname:{this.props.displayName}</p>
-            <p>About:{this.props.about}</p>
-          </div>
-          <NavLink exact to="/profile" activeClassName="selected">
-            <button>profile</button>
-          </NavLink>
-        </div>
-
-        <div className="feed-column">
-          <div className="feed-Header">feed data</div>
-          {/* <Message />
-            <Message />
-            <Message /> 
-          {this.props.messageList.map(message => (
-            <Message
-              displayName={message.displayName}
-              image={message.image}
-              text={message.text}
-              likes={message.likes}
-            />
-          ))}
-        </div>
-
-        <div className="input-column">
-          <div className="input-Header">input data</div>
-          <form onSubmit={this.handlePostMessage}>
-            <div className="Message-input">
-              <textarea
-                rows="15"
-                cols="30"
-                name="text"
-                className="message"
-                required
-                value={this.state.text}
-                onChange={this.handleChange}
-              />
-              <button type="submit" className="message-submit">
-                submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-     </Grid>
-    );
-  }
-}
-
-*/

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Form, Button, Card, CardComponent, Image, Input } from "semantic-ui-react";
+import { Form, Button, Image, Input } from "semantic-ui-react";
 import { updateUserImage as uploadImage } from "../../actions";
 
 class UserPic extends Component {
@@ -52,10 +52,6 @@ class UserPic extends Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  // uploadUserPic: file => dispatch(uploadUserPic(file))
-});
 
 export default connect(
   ({ users, auth }) => ({

@@ -5,12 +5,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateThenGoToUserProfile as update } from "../../actions/users";
 import {
-  Button,
   Form,
-  Divider,
   Card,
-  CardComponent,
-  Image
 } from "semantic-ui-react";
 import DeleteAccount from "../deleteAccount";
 
@@ -45,7 +41,6 @@ class ProfilePage extends Component {
               type="text"
               name="displayName"
               onChange={this.handleChange}
-              required
             />
           </Form.Field>
           <Form.Field>
@@ -54,23 +49,18 @@ class ProfilePage extends Component {
               type="password"
               name="password"
               onChange={this.handleChange}
-              required
             />
           </Form.Field>
           <Form.TextArea
             input
             placeholder='Change Your "About Me" Section And Tell the World Who You Are...'
-            // rows="4"
-            // cols="40"
             type="text"
             name="about"
             onChange={this.handleChange}
-            required
           />
           <Form.Button color="blue" onSubmit={this.handleUpdate}>
             Submit Changes to Profile
           </Form.Button>
-          
         </Form>
         <DeleteAccount />
       </div>
