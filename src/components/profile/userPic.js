@@ -44,7 +44,7 @@ class UserPic extends Component {
             className="profile-user-pic"
           />
           <Input type="file" name="picture" required />
-          <Button floated="right" type="submit" color="blue">
+          <Button  type="submit" color="blue">
             Upload a Photo
           </Button>
         </Form>

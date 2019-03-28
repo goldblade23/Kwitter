@@ -180,6 +180,8 @@ export const updateUserImage =  imageData=> (dispatch,getState) => {
         "Content-Type": "application/json"
       },
     })
+    
+    
     .then(result => {
        dispatch({
           type: DELETEUSER_SUCCESS,

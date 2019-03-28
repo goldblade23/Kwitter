@@ -8,13 +8,15 @@ import {
   LOGOUTCURRENTUSER,
   LOGOUT,
   LOGOUT_SUCCESS,
-  LOGOUT_FAIL
 } from "../actions/auth.js";
 
 const initialState = {
   loginLoading: false,
   login: null,
   loginError: null,
+  logoutLoading: false,
+  logout: null,
+  logoutError: null,
   registerLoading: false,
   register: null,
   registerError: null
@@ -48,13 +50,10 @@ export default (state = initialState, action) => {
       return { initialState };
 
     case LOGOUT:
-      return { ...state, logoutLoading: true, logoutError: null };
+      return state
 
     case LOGOUT_SUCCESS:
-      return { ...state, logout: action.payload, logoutLoading: false };
-
-    case LOGOUT_FAIL:
-      return { ...state, logoutError: action.payload, logoutLoading: false };
+      return {...state,login:null}
 
     default:
       return state;

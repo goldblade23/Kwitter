@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { logoutThenGoToLogin as logout } from "../../actions/auth";
+import { logout } from "../../actions/auth";
 import { connect } from "react-redux";
 import { Button, Dimmer, Divider, Header, Icon, Menu } from "semantic-ui-react";
 

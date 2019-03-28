@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "../App.css";
-import Title from "./Title.js";
-import LoginPage from "./login/LoginPage.js";
-import ProfilePage from "./profile/ProfilePage.js";
+import Title from "./title.js";
+import LoginPage from "./login/loginPage.js";
+import ProfilePage from "./profile/profilePage.js";
 import { Route, Switch } from "react-router-dom";
-import SignUpForm from "./login/SignUp.js";
-import FeedPage from "./feed/FeedPage.js";
+import SignUpForm from "./login/signUp.js";
+import FeedPage from "./feed/feedPage.js";
 import { connectRouter } from "connected-react-router";
-import NavBar from "./NavBar";
+import NavBar from "./navBar";
 
 class App extends Component {
   render() {

@@ -95,38 +95,35 @@ export const registerThenGoToUserProfile = registerData => dispatch => {
   .then(() => dispatch(loginThenGoToUserProfile(registerData)));
 };
 
-const logout = logoutData => (dispatch, getState) => {
+export const logout = logoutData => (dispatch, getState) => {
   const token = getState().auth.login.token
   dispatch({
     type: LOGOUT
   });
 
-  return fetch(url + "/logout", {
+  fetch(url + "/logout", {
     method: "GET",
     headers: {
       Authorization: "Bearer" + token,
-      "Content-Type" : "application/json"
     },
     body: JSON.stringify(logoutData)
   })
     .then(handleJsonResponse)
+  .then(dispatch(push("/")))
     .then(result => {
-      return dispatch({
+       dispatch({
         type: LOGOUT_SUCCESS,
         payload: result
-      });
+        
+      })  
+      
+      
+      
     })
-    .catch(err => {
-      return Promise.reject(
-        dispatch({
-          type: LOGOUT_FAIL,
-          payload: alert("Incorrect login or password.")
-        })
-      );
-    });
+    
 };
 
-export const logoutThenGoToLogin = logoutData => dispatch => {
-  return dispatch(logout(logoutData))
-  .then(() => dispatch(push("/")));
-};
+// export const logoutThenGoToLogin = logoutData => dispatch => {
+//   return dispatch(logout(logoutData))
+//   .then(() => dispatch(push("/feed")));
+// };

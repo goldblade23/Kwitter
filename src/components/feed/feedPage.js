@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Message from "./Message.js";
+import Message from "./message.js";
 import { connect } from "react-redux";
 import {
   user,
