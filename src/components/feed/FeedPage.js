@@ -77,9 +77,9 @@ class FeedPage extends Component {
                   {this.props.about}
                 </Card.Description>
                 <Divider />
-                <NavLink exact to="/profile" activeClassName="selected">
+                {/* <NavLink exact to="/profile" activeClassName="selected">
                   <Button color="blue">Edit Your Information</Button>
-                </NavLink>
+                </NavLink> */}
               </Card.Content>
             </Card>
           </Grid.Column>
