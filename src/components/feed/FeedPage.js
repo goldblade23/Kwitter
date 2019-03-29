@@ -48,8 +48,8 @@ class FeedPage extends Component {
               color="green"
               as={Menu}
               animation="overlay"
-              Icon="labeled"
-              Inverted
+              icon="labeled"
+              inverted
               vertical
               width="thin"
               fluid
@@ -119,6 +119,7 @@ class FeedPage extends Component {
                     image={message.image}
                     text={message.text}
                     likes={message.likes}
+                    key={Math.random() * 10000}
                   />
                 ))}
               </Header>

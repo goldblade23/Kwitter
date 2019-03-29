@@ -25,7 +25,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <div className="profile-page">
-         <Link exact to="/feed">
+         <Link to="/feed">
       </Link> 
         <UserPic />
         <Form onSubmit={this.handleUpdate}>
@@ -56,7 +56,6 @@ class ProfilePage extends Component {
             />
           </Form.Field>
           <Form.TextArea
-            input
             placeholder='Change Your "About Me" Section And Tell the World Who You Are...'
             type="text"
             defaultValue={this.props.about}

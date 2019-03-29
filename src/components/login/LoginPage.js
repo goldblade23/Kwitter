@@ -68,7 +68,7 @@ class LoginPage extends Component {
                     Login
                   </Button>
                   <Button.Or />
-                  <Link exact to="/register">
+                  <Link to="/register">
                     <Button className="signup-button" size="large" color="blue">
                       Register Now!
                     </Button>

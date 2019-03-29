@@ -88,7 +88,7 @@ class SignUpForm extends Component {
                   </Button>
                 </div>
                 <Button.Or />
-                <Link exact to="/">
+                <Link to="/">
                   <Button size="large" color="brown">
                     Login Here
                   </Button>

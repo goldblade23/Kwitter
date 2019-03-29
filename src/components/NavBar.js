@@ -13,8 +13,8 @@ class NavBar extends Component {
 
     return (
       <Container>
-        <Menu color="yellow" inverted pointing>
-          <Menu.Item header inverted>
+        <Menu style={{backgroundColor:"yellow"}}  pointing>
+          <Menu.Item header inverted="true">
             Kwitter
           </Menu.Item>
           <Menu.Item
@@ -22,7 +22,6 @@ class NavBar extends Component {
             name="feed"
             active={activeItem === "feed"}
             onClick={this.handleItemClick}
-            exact
             to="/feed"
           />
           <Menu.Item
@@ -30,7 +29,6 @@ class NavBar extends Component {
             as={Link}
             active={activeItem === "profile"}
             onClick={this.handleItemClick}
-            exact
             to="/profile"
           />
           <Menu.Menu position="right">

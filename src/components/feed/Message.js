@@ -7,10 +7,11 @@ class Message extends Component {
       <Card
         color="green"
         animation="overlay"
-        Icon="labeled"
-        Inverted
-        vertical
-        width="thin"
+        icon="labeled"
+         width="thin"
+        // inverted
+        // vertical
+       
         fluid
       >
         <Card.Content>
