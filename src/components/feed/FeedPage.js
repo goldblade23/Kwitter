@@ -7,7 +7,7 @@ import {
   getUsers,
   updateAfterPosting as postMessage
 } from "../../actions";
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import {
   Button,
   Card,
