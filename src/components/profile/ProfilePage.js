@@ -11,7 +11,7 @@ import {
 import DeleteAccount from "../DeleteAccount";
 
 class ProfilePage extends Component {
-  state = { displayName: "", PASSWORD: "", about: "" };
+  state = { displayName: this.props.displayName, PASSWORD: "", about: this.props.about };
 
   handleUpdate = e => {
     e.preventDefault();
@@ -39,24 +39,30 @@ class ProfilePage extends Component {
             <input
               placeholder="Change Display Name"
               type="text"
+              defaultValue={this.props.displayName}
               name="displayName"
               onChange={this.handleChange}
+              
             />
           </Form.Field>
           <Form.Field>
             <input
               placeholder="Change Password"
               type="password"
+              defaultValue={this.props.passwordValue}
               name="password"
               onChange={this.handleChange}
+              
             />
           </Form.Field>
           <Form.TextArea
             input
             placeholder='Change Your "About Me" Section And Tell the World Who You Are...'
             type="text"
+            defaultValue={this.props.about}
             name="about"
             onChange={this.handleChange}
+            
           />
           <Form.Button color="blue" onSubmit={this.handleUpdate}>
             Submit Changes to Profile
@@ -73,7 +79,9 @@ export default connect(
     loginInfo: auth.login,
     username: users.currentUsername,
     displayName: users.currentDisplayName,
-    about: users.currentAbout
+    about: users.currentAbout,
+    passwordValue:users.currentPassword
+    
   }),
   { update }
 )(ProfilePage);

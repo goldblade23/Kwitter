@@ -19,6 +19,7 @@ const initialState = {
   currentUsername: "",
   currentDisplayName: "",
   currentAbout: "",
+  currentPassword:"",
   updateLoading: false,
   update: null,
   updateError: null,
@@ -36,7 +37,8 @@ export default (state = initialState, action) => {
         ...state,
         currentUsername: action.payload.username,
         currentDisplayName: action.payload.displayName,
-        currentAbout: action.payload.about
+        currentAbout: action.payload.about,
+        currentPassword: action.payload.password
       };
     case GETUSERS:
       return state;

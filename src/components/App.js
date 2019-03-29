@@ -11,14 +11,12 @@ import NavBar from "./NavBar";
 
 class App extends Component {
   render() {
-    //const {login} =this.props
     return (
       <div className="App">
         <Title />
         <Switch>
           <Route exact path="/profile" render={() => <NavBar />} />
           <Route exact path="/feed" render={() => <NavBar />} />
-          {/* <Route exact path="/feed" render={() => login ?  <FeedPage />: <LoginPage />} /> */}
         </Switch>
         <Switch>
           <Route exact path="/" render={() => <LoginPage />} />
