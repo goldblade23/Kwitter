@@ -8,7 +8,7 @@ class Title extends Component {
     
     return (
       <div className="kwitterTitle">
-      <Header as="h1" size ="extra large" color="black" textAlign="center">
+      <Header as="h1" color="black" textAlign="center">
       <Image circular src= {logo} /> Kwitter, Bro
       </Header>
       </div>

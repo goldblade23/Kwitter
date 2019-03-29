@@ -40,8 +40,6 @@ class FeedPage extends Component {
   }
 
   render() {
-    //console.log(this.props.loginInfo.token)
-    console.log(this.props.userList);
     return (
       <Grid>
         <Grid.Row>

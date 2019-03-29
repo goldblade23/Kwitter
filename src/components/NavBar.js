@@ -4,7 +4,7 @@ import { Container, Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 class NavBar extends Component {
-  state = { activeItem: "" };
+  state = { activeItem: 'feed'};
 
   handleItemClick = (event, { name }) => this.setState({ activeItem: name });
 
@@ -13,7 +13,7 @@ class NavBar extends Component {
 
     return (
       <Container>
-        <Menu color="yellow" inverted>
+        <Menu color="yellow" inverted pointing>
           <Menu.Item header inverted>
             Kwitter
           </Menu.Item>
