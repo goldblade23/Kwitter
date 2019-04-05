@@ -91,7 +91,7 @@ fetch(url, {
       })
       .then(result => {
         // dispatch here on success --
-        console.log(result)
+        // console.log(result)
         dispatch({
           type: UPDATE_SUCCESS,
           dpayload: result//data.user.displayName

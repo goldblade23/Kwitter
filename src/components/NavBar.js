@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import Logout from "./login/Logout.js";
 import { Container, Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class NavBar extends Component {
-  state = { activeItem: 'feed'};
-
-  handleItemClick = (event, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { activeItem } = this.state;
-
     return (
       <Container>
         <Menu style={{backgroundColor:"yellow"}}  pointing>
@@ -20,15 +16,13 @@ class NavBar extends Component {
           <Menu.Item
             as={Link}
             name="feed"
-            active={activeItem === "feed"}
-            onClick={this.handleItemClick}
+            active={this.props.path==="/feed"}
             to="/feed"
           />
           <Menu.Item
             name="profile"
             as={Link}
-            active={activeItem === "profile"}
-            onClick={this.handleItemClick}
+            active={this.props.path==="/profile"}
             to="/profile"
           />
           <Menu.Menu position="right">
@@ -41,4 +35,11 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+// export default NavBar;
+
+export default connect(
+  ({ router }) => ({
+    path: router.location.pathname
+  }),
+  null
+)(NavBar);

@@ -9,7 +9,7 @@ class UserPic extends Component {
     file: null
   };
   imageFileChangeHandler = event => {
-    console.log(event.target.imageFiles[0]);
+    //console.log(event.target.imageFiles[0]);
     const imageFile = event.target.imageFiles[0];
     this.setState({
       imageFile
