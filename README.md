@@ -24,7 +24,7 @@ https://kwitter-bro.herokuapp.com
 
 ## Authors
 <ul>
-  <li>Joseph Hafed</li>
+  <li></li>
   <li>Eileen Tallman</li>
   <li>Khashayar Farhadi</li>
   <li>TJ Flannigan</li>
